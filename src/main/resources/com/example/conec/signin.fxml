@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: OldLace;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.conec.SignInController">
+   <children>
+      <AnchorPane opacity="0.75" prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #2c537b;">
+         <children>
+            <Text layoutX="250.0" layoutY="54.0" stroke="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="APT" wrappingWidth="100.2919921875">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="48.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.25882354378700256" green="0.7607843279838562" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="0.43529412150382996" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <ImageView fitHeight="72.0" fitWidth="89.0" layoutX="503.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="login" layoutX="168.0" layoutY="227.0" onAction="#loginfield" opacity="0.52" prefHeight="56.0" prefWidth="264.0" promptText="Login" style="-fx-background-color: #42C2FF; -fx-background-radius: 50;">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="27.0" />
+         </font></TextField>
+      <PasswordField fx:id="passwordfield" layoutX="168.0" layoutY="322.0" onAction="#passfield" opacity="0.52" prefHeight="56.0" prefWidth="264.0" promptText="Password" style="-fx-background-color: #42C2FF; -fx-background-radius: 50;">
+         <font>
+            <Font size="27.0" />
+         </font></PasswordField>
+      <Text fill="#006dff" layoutX="173.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ВХОД В АККАУНТ" wrappingWidth="254.2919921875">
+         <font>
+            <Font name="Corbel Bold" size="30.0" />
+         </font>
+      </Text>
+      <Button fx:id="SignIn" layoutX="168.0" layoutY="425.0" mnemonicParsing="false" onAction="#signinbutton" prefHeight="72.0" prefWidth="264.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 25;" text="Войти" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="37.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
