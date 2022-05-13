@@ -6,16 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.scene.control.Alert;
-import javax.swing.*;
-import java.io.IOException;
 
-import static jdk.internal.joptsimple.internal.Strings.isNullOrEmpty;
+import java.io.IOException;
 
 public class SignInController {
 
@@ -45,6 +40,10 @@ public class SignInController {
         if (username.equals("")){
             shake uslerlogin = new shake(login);
             uslerlogin.PlayAnim();
+
+
+
+
 //            Alert alert = new Alert(Alert.AlertType.WARNING);
 //
 //            alert.setTitle("Warning!");
@@ -56,6 +55,7 @@ public class SignInController {
             System.out.println("Login is empty");
             return;
         }
+
         if (username.length()<5) {
             shake uslerlogin = new shake(login);
             uslerlogin.PlayAnim();
