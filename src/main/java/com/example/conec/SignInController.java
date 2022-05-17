@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.ScatterChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
@@ -15,6 +14,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 
 public class SignInController {
 
@@ -78,7 +78,22 @@ public class SignInController {
 //
 
     }
+    @FXML
+    void passfield(ActionEvent event) {
 
+    }
+    @FXML
+    void loginfield(ActionEvent event) {
+
+    }
+
+    @FXML
+    public void initialize() {
+
+
+
+
+    }
     private void loginUser(String username, String pass) {
         DatabaseHandler dbhHandler = new DatabaseHandler() ;
         User user = new User();
@@ -100,12 +115,30 @@ public class SignInController {
 
             shake uslerlogin = new shake(login);
             uslerlogin.PlayAnim();
+
+
+
+
+
+//            Alert alert = new Alert(Alert.AlertType.WARNING);
+//
+//            alert.setTitle("Warning!");
+//            alert.setHeaderText(null);
+//            alert.setContentText("Login is empty!");
+//
+//            alert.show();
+
+
             System.out.println("Login is empty");
             return;
 
         }
 
+
         if (username.length() < 5) {
+
+
+        if (username.length()<5) {
 
             shake uslerlogin = new shake(login);
             uslerlogin.PlayAnim();
@@ -158,26 +191,11 @@ public class SignInController {
 
     }
 
-    @FXML
-    void passfield(ActionEvent event) {
-
-    }
-    @FXML
-    void loginfield(ActionEvent event) {
-
-    }
-
-    @FXML
-    public void initialize() {
 
 
 
 
-    }
-
-
-
-}
+}}
 
 
 
