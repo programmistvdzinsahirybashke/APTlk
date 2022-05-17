@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: OldLace;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.conec.SignupCon">
+   <children>
+      <AnchorPane opacity="0.75" prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #2c537b;">
+         <children>
+            <Text layoutX="246.0" layoutY="56.0" stroke="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="APT" wrappingWidth="107.2919921875">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="48.0" />
+               </font>
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="0.006711409395973154">
+                           <color>
+                              <Color red="0.25882354378700256" green="0.7607843279838562" blue="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color green="0.43529412150382996" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Text>
+            <ImageView fitHeight="72.0" fitWidth="89.0" layoutX="497.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image-removebg-preview.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="152.0" layoutY="93.0" text="Регистрация" textFill="#0073ff9e">
+         <font>
+            <Font size="52.0" />
+         </font>
+      </Label>
+      <TextField fx:id="lognfild" layoutX="43.0" layoutY="283.0" onAction="#setlogin" opacity="0.83" prefHeight="56.0" prefWidth="260.0" promptText="Login" style="-fx-background-color: #42C2FF; -fx-background-radius: 55;">
+         <font>
+            <Font size="26.0" />
+         </font></TextField>
+      <TextField fx:id="namefild" layoutX="43.0" layoutY="193.0" onAction="#setname" opacity="0.83" prefHeight="56.0" prefWidth="260.0" promptText="Name" style="-fx-background-color: #42C2FF; -fx-background-radius: 55;">
+         <font>
+            <Font size="26.0" />
+         </font></TextField>
+      <TextField fx:id="surnamefild" layoutX="319.0" layoutY="193.0" onAction="#setsurname" opacity="0.83" prefHeight="56.0" prefWidth="260.0" promptText="Surname" style="-fx-background-color: #42C2FF; -fx-background-radius: 55;">
+         <font>
+            <Font size="26.0" />
+         </font></TextField>
+      <Button fx:id="signupbutton" layoutX="146.0" layoutY="376.0" mnemonicParsing="false" onAction="#signupbutton" prefHeight="63.0" prefWidth="315.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 25;" text="Зарегистрироваться" textFill="WHITE">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="28.0" />
+         </font>
+      </Button>
+      <Hyperlink fx:id="exists" layoutX="229.0" layoutY="454.0" onAction="#alreyadyexists" prefHeight="49.0" prefWidth="142.0" text="Уже есть аккаунт? Авторизуйтесь" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Hyperlink>
+      <PasswordField fx:id="passfild" layoutX="319.0" layoutY="280.0" onAction="#setpass" opacity="0.83" prefHeight="56.0" prefWidth="260.0" promptText="Password" style="-fx-background-color: #42C2FF; -fx-background-radius: 55;">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </PasswordField>
+   </children>
+</AnchorPane>

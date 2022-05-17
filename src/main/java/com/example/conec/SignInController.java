@@ -5,17 +5,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.ScatterChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.scene.control.Alert;
-import javax.swing.*;
-import java.io.IOException;
 
-import static jdk.internal.joptsimple.internal.Strings.isNullOrEmpty;
+import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 public class SignInController {
 
@@ -28,79 +27,15 @@ public class SignInController {
     private TextField login;
 
 
-
-
-
+    @FXML
+    private Hyperlink reg;
 
     @FXML
-    private PasswordField passwordfield;{
+    void goreg(ActionEvent event) {
 
-        }
-
-    @FXML
-    void signinbutton(ActionEvent event) {
-
-
-        String username = login.getText();
-        if (username.equals("")){
-            shake uslerlogin = new shake(login);
-            uslerlogin.PlayAnim();
-//            Alert alert = new Alert(Alert.AlertType.WARNING);
-//
-//            alert.setTitle("Warning!");
-//            alert.setHeaderText(null);
-//            alert.setContentText("Login is empty!");
-//
-//            alert.show();
-
-            System.out.println("Login is empty");
-            return;
-        }
-        if (username.length()<5) {
-            shake uslerlogin = new shake(login);
-            uslerlogin.PlayAnim();
-//            Alert alert = new Alert(Alert.AlertType.WARNING);
-//
-//            alert.setTitle("Warning!");
-//            alert.setHeaderText(null);
-//            alert.setContentText("Login is too short!");
-//
-//            alert.show();
-            System.out.println("Login is too short");
-            return;
-        }
-        String pass = passwordfield.getText();
-        if (pass.equals("")){
-            shake passlogin = new shake(passwordfield);
-            passlogin.PlayAnim();
-//            Alert alert = new Alert(Alert.AlertType.WARNING);
-//
-//            alert.setTitle("Warning!");
-//            alert.setHeaderText(null);
-//            alert.setContentText("Password is empty!");
-//
-//            alert.show();
-            System.out.println("Password is empty");
-            return;
-        }
-        if (pass.length()<5 ){
-            shake passlogin = new shake(passwordfield);
-            passlogin.PlayAnim();
-//            Alert alert = new Alert(Alert.AlertType.WARNING);
-//
-//            alert.setTitle("Warning!");
-//            alert.setHeaderText(null);
-//            alert.setContentText("Password is too short!");
-//
-//            alert.show();
-            System.out.println("Password is too short");
-            return;
-        }
-
-        System.out.println("You signed in");
-        SignIn.getScene().getWindow().hide();
+        reg.getScene().getWindow().hide();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("lk.fxml"));
+        loader.setLocation(getClass().getResource("signup.fxml"));
 
         try {
             loader.load();
@@ -115,6 +50,114 @@ public class SignInController {
 
     }
 
+
+
+
+    @FXML
+    private PasswordField passwordfield;{
+
+        }
+
+    @FXML
+    void signinbutton(ActionEvent event) {
+
+//
+        String pass = passwordfield.getText();
+        String username = login.getText();
+        loginUser(username, pass);
+
+//
+////
+//
+//
+
+////
+////
+
+
+//
+
+    }
+
+    private void loginUser(String username, String pass) {
+        DatabaseHandler dbhHandler = new DatabaseHandler() ;
+        User user = new User();
+        user.setLogin(username);
+        user.setPassword(pass);
+        ResultSet result = dbhHandler.getUser(user);
+
+        int counter = 0;
+
+       try {
+           while (result.next()) {
+               counter++;
+           }
+       } catch (SQLException e){
+           e.printStackTrace();
+       }
+
+        if (username.equals("")) {
+
+            shake uslerlogin = new shake(login);
+            uslerlogin.PlayAnim();
+            System.out.println("Login is empty");
+            return;
+
+        }
+
+        if (username.length() < 5) {
+
+            shake uslerlogin = new shake(login);
+            uslerlogin.PlayAnim();
+            System.out.println("Login is too short");
+            return;
+        }
+
+        if (pass.equals("")) {
+
+            shake passlogin = new shake(passwordfield);
+            passlogin.PlayAnim();
+            System.out.println("Password is empty");
+            return;
+        }
+        if (pass.length() < 5) {
+
+            shake passlogin = new shake(passwordfield);
+            passlogin.PlayAnim();
+            System.out.println("Password is too short");
+            return;
+
+        }
+        if (counter>=1){
+            System.out.println("User found!");
+            System.out.println("You signed in!");
+            SignIn.getScene().getWindow().hide();
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("lk.fxml"));
+
+            try {
+                loader.load();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        }
+        else {
+            System.out.println("User not found!");
+            shake passlogin = new shake(passwordfield);
+            shake uslerlogin = new shake(login);
+            passlogin.PlayAnim();
+            uslerlogin.PlayAnim();
+
+        }
+
+    }
+
     @FXML
     void passfield(ActionEvent event) {
 
@@ -126,6 +169,7 @@ public class SignInController {
 
     @FXML
     public void initialize() {
+
 
 
 

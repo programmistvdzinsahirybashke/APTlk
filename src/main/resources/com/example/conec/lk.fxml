@@ -14,7 +14,7 @@
    <children>
       <AnchorPane opacity="0.75" prefHeight="78.0" prefWidth="600.0" style="-fx-background-color: #2c537b;">
          <children>
-            <Text layoutX="252.0" layoutY="56.0" stroke="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="APT" wrappingWidth="107.2919921875">
+            <Text layoutX="246.0" layoutY="56.0" stroke="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="APT" wrappingWidth="107.2919921875">
                <font>
                   <Font name="Arial Rounded MT Bold" size="48.0" />
                </font>
@@ -40,7 +40,7 @@
                   </LinearGradient>
                </fill>
             </Text>
-            <ImageView fitHeight="72.0" fitWidth="89.0" layoutX="501.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="72.0" fitWidth="89.0" layoutX="497.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@image-removebg-preview.png" />
                </image>
@@ -52,29 +52,39 @@
             <Font name="Century Gothic Bold" size="55.0" />
          </font>
       </Text>
-      <Button fx:id="rates" layoutX="29.0" layoutY="239.0" mnemonicParsing="false" onAction="#openmyrates" prefHeight="92.0" prefWidth="308.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Мои оценки" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button fx:id="rates" layoutX="28.0" layoutY="314.0" mnemonicParsing="false" onAction="#openmyrates" prefHeight="78.0" prefWidth="283.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Мои оценки" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Calibri Light" size="43.0" />
+         </font>
+      </Button>
+      <Button fx:id="messages" layoutX="29.0" layoutY="222.0" mnemonicParsing="false" onAction="#openmymessages" prefHeight="67.0" prefWidth="561.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Расписание" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Calibri Light" size="43.0" />
+         </font>
+      </Button>
+      <Button fx:id="portfolio" layoutX="28.0" layoutY="494.0" mnemonicParsing="false" onAction="#openmyportfolio" prefHeight="78.0" prefWidth="283.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Портфолио" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Calibri Light" size="43.0" />
+         </font>
+      </Button>
+      <Button fx:id="logout" layoutX="333.0" layoutY="494.0" mnemonicParsing="false" onAction="#logout" prefHeight="78.0" prefWidth="250.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Выход" textAlignment="CENTER" textFill="#00000099" wrapText="true">
          <font>
             <Font name="Arial Rounded MT Bold" size="33.0" />
          </font>
       </Button>
-      <Button fx:id="messages" layoutX="29.0" layoutY="432.0" mnemonicParsing="false" onAction="#openmymessages" prefHeight="117.0" prefWidth="283.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Расписание" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button fx:id="profile" layoutX="333.0" layoutY="313.0" mnemonicParsing="false" onAction="#openprofiles" prefHeight="78.0" prefWidth="250.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Профиль" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
-            <Font name="Arial Rounded MT Bold" size="33.0" />
+            <Font name="Calibri Light" size="43.0" />
          </font>
       </Button>
-      <Button fx:id="portfolio" layoutX="29.0" layoutY="340.0" mnemonicParsing="false" onAction="#openmyportfolio" prefHeight="78.0" prefWidth="308.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Портфолио" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Button fx:id="moodle" layoutX="26.0" layoutY="402.0" mnemonicParsing="false" onAction="#openmoodle" prefHeight="78.0" prefWidth="283.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Moodle" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
-            <Font name="Arial Rounded MT Bold" size="30.0" />
+            <Font name="Calibri Light" size="40.0" />
          </font>
       </Button>
-      <Button fx:id="logout" layoutX="336.0" layoutY="457.0" mnemonicParsing="false" onAction="#logout" prefHeight="92.0" prefWidth="250.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Выход" textAlignment="CENTER" textFill="#546375" wrapText="true">
+      <Button fx:id="sttngs" layoutX="333.0" layoutY="402.0" mnemonicParsing="false" onAction="#opensettings" prefHeight="78.0" prefWidth="250.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Настройки" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
-            <Font name="Arial Rounded MT Bold" size="33.0" />
-         </font>
-      </Button>
-      <Button fx:id="profile" layoutX="349.0" layoutY="239.0" mnemonicParsing="false" onAction="#openprofiles" prefHeight="201.0" prefWidth="237.0" style="-fx-background-color: #2d9fd5; -fx-background-radius: 20;" text="Мой профиль" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="44.0" />
+            <Font name="Calibri Light" size="43.0" />
          </font>
       </Button>
    </children>
